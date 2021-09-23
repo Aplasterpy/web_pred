@@ -1,0 +1,159 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/56cf4876d6.js"></script>
+    <title>Home</title>
+    
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="{{url_for('static', filename='logo.png')}}" height="150px" width="150px" alt="Logo" action="/" class="img-fluid" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto">
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-dark ms-3">Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Navbar 2/ Black Part-->
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Reports
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbardarkDropdownMenuLink">
+                        <li><a href="#" class="dropdown-item">Reports1</a></li>
+                        <li><a href="#" class="dropdown-item">Reports2</a></li>
+                        <li><a href="#" class="dropdown-item">Reports3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+      </nav>
+      </div>
+  <section> 
+    <h6>Distibuter Data</h6>
+  </section>
+
+
+    <section style="background-color: #FFE2E3;" >
+        <!--Distibuter Name (Input)-->
+        <br>
+      <form class="row gx-3 gy-2 align-items-center">
+      <div class="col-sm-3">
+        <label class="visually-hidden"></label>
+        <input type="text" class="form-control" id="specificSizeInputName" placeholder="Distibuter Name">
+      </div>
+      <div class="col-sm-3">
+        <select class="form-select" id="inputGroupSelect02">
+          <option selected>Select Months</option>
+          <option value="1">Jan</option>
+          <option value="2">Feb</option>
+          <option value="3">Mar</option>
+          <option value="3">Apr</option>
+          <option value="3">May</option>
+          <option value="3">Jun</option>
+          <option value="3">Jul</option>
+          <option value="3">Aug</option>
+          <option value="3">Sept</option>
+          <option value="3">Oct</option>
+          <option value="3">Nov</option>
+          <option value="3">Dec</option>
+      </select>
+      </div>
+      <div class="col-sm-3">
+        <select class="form-select" id="inputGroupSelect02">
+          <option selected>Select Week</option>
+          <option value="1">Week-1</option>
+          <option value="2">Week-2</option>
+          <option value="3">Week-3</option>
+          <option value="3">Week-4</option>
+        </select>
+      </div>
+
+      <div class="d-grid gap-2 col-1 mx-auto" method = 'POST' action='/'>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+
+    <div class="d-grid gap-2 col-1 mx-auto">
+      <i class="fa fa-download fa-2x" aria-hidden="true" style="float: right; color: #F40009;"></i>
+    </div>
+
+    </form>
+    <br>
+      </section>
+
+      <!--table-->
+    <table id="example" class="table table-striped table-bordered" style="width:100%; background-color: #FF343C;">
+      <!--column span table head-->
+      <div>
+          <thead>
+              <th colspan="4"></th>
+              <th colspan="3" style="color: white;">Previous Week</th>
+              <th colspan="3" style="color: white;">Current Week</th>
+          </thead>
+      </div>
+
+      <!--main table -->
+      <div>
+          <thead>
+              <tr>
+                  <th style="color: white;">Distributor Code</th>
+                  <th style="color: white;">Distributor Name</th>
+                  <th style="color: white;">Item Code</th>
+                  <th style="color: white;">Item Name</th>
+                  <th style="color: white;">Predected Qty</th>
+                  <th style="color: white;">Actual Qty</th>
+                  <th style="color: white;">Difference</th>
+                  <th style="color: white;">Predected Qty</th>
+                  <th style="color: white;">Actual Qty</th>
+                  <th style="color: white;">Difference</th>
+              </tr>
+
+              <tr>
+                  <th style="background-color: white;">Dist-1</th>
+                  <th style="background-color: white;">ABC Shop</th>
+                  <th style="background-color: white;">ITEM-13</th>
+                  <th style="background-color: white;">FANTA</th>
+                  <th style="background-color: white;">10</th>
+                  <th style="background-color: white;">9</th>
+                  <th style="background-color: white;">1</th>
+                  <th style="background-color: white;">13</th>
+                  <th style="background-color: white;">13</th>
+                  <th style="background-color: white;">0</th>
+              </tr>
+<!--
+              {% for item in data %}
+              <tr>
+                <td>item.Distributor Code</td>
+                <td>item.Distributor Name</td>
+                <td>item.Item Code</td>
+                <td>item.Item Name</td>
+                <td>item.Predected Qty</td>
+                <td>item.Actual Qty</td>
+                <td>item.Difference</td>
+                <td>item.Predected Qty</td>
+                <td>item.Actual Qty</td>
+                <td>item.Difference</td>
+              {% endfor %}
+            </tr>
+-->
+          </thead>
+      </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <div>
+        <table>
+            <tr>
+            <td>CalenderID</td>
+            <td>StartDate</td>
+            <td>EndDate</td>
+            <td>Week</td>
+            <td>Month</td>
+            <td>Year</td>
+            </tr>
+
+            {% for item in data %}
+            <tr>
+                <td>{{item.CalenderID}}</td>
+                <td>{{item.StartDate}}</td>
+                <td>{{item.EndDate}}</td>
+                <td>{{item.Week}}</td>
+                <td>{{item.Month}}</td>
+                <td>{{item.Year}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
